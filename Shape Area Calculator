@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+class ShapeArea {
+
+    double area(double r) {
+        return 3.14 * r * r;   // Circle
+    }
+
+    double area(double l, double b) {
+        return l * b;          // Rectangle
+    }
+
+    double area(float b, float h) {
+        return 0.5 * b * h;    // Triangle
+    }
+}
+
+public class ShapeAreaCalculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ShapeArea s = new ShapeArea();
+
+        System.out.print("Enter radius of circle: ");
+        double r = sc.nextDouble();
+        System.out.println("Area of Circle: " + s.area(r));
+
+        System.out.print("Enter length and breadth of rectangle: ");
+        double l = sc.nextDouble();
+        double b = sc.nextDouble();
+        System.out.println("Area of Rectangle: " + s.area(l, b));
+
+        System.out.print("Enter base and height of triangle: ");
+        float base = sc.nextFloat();
+        float height = sc.nextFloat();
+        System.out.println("Area of Triangle: " + s.area(base, height));
+    }
+}
