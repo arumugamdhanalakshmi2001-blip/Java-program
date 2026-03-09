@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class LibraryBookTracker {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int totalBooks, issuedBooks = 0, choice;
+
+        System.out.print("Enter total number of books in library: ");
+        totalBooks = sc.nextInt();
+
+        System.out.println("1. Issue Book");
+        System.out.println("2. Return Book");
+        System.out.println("3. Check Available Books");
+
+        System.out.print("Enter your choice: ");
+        choice = sc.nextInt();
+
+        switch (choice) {
+            case 1:
+                if (totalBooks > 0) {
+                    totalBooks--;
+                    issuedBooks++;
+                    System.out.println("Book Issued Successfully");
+                } else {
+                    System.out.println("No books available");
+                }
+                break;
+
+            case 2:
+                totalBooks++;
+                issuedBooks--;
+                System.out.println("Book Returned Successfully");
+                break;
+
+            case 3:
+                System.out.println("Available Books: " + totalBooks);
+                System.out.println("Issued Books: " + issuedBooks);
+                break;
+
+            default:
+                System.out.println("Invalid Choice");
+        }
+    }
+}
