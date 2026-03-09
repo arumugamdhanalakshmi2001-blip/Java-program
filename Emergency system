@@ -1,0 +1,23 @@
+import java.applet.Applet;
+import java.awt.*;
+import java.awt.event.*;
+
+public class EmergencySystem extends Applet implements ActionListener {
+
+    Button b;
+    Label l;
+
+    public void init() {
+        b = new Button("Emergency");
+        l = new Label("");
+
+        b.addActionListener(this);
+
+        add(b);
+        add(l);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        l.setText("Emergency Alert Sent!");
+    }
+}
