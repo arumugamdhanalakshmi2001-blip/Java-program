@@ -1,0 +1,35 @@
+import java.applet.Applet;
+import java.awt.*;
+import java.awt.event.*;
+
+public class ShoppingCartApplet extends Applet implements ActionListener {
+
+    Label l;
+    Button b1, b2;
+    int cart = 0;
+
+    public void init() {
+        l = new Label("Items in Cart: 0");
+
+        b1 = new Button("Add Item");
+        b2 = new Button("Remove Item");
+
+        b1.addActionListener(this);
+        b2.addActionListener(this);
+
+        add(l);
+        add(b1);
+        add(b2);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == b1) {
+            cart++;
+        } 
+        else if (e.getSource() == b2 && cart > 0) {
+            cart--;
+        }
+
+        l.setText("Items in Cart: " + cart);
+    }
+}
