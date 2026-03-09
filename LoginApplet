@@ -1,0 +1,28 @@
+import java.applet.Applet;
+import java.awt.Button;
+import java.awt.TextField;
+import java.awt.Label;
+
+public class LoginApplet extends Applet {
+
+    Label l1, l2;
+    TextField t1, t2;
+    Button b;
+
+    public void init() {
+        l1 = new Label("Username:");
+        l2 = new Label("Password:");
+
+        t1 = new TextField(15);
+        t2 = new TextField(15);
+        t2.setEchoChar('*');
+
+        b = new Button("Login");
+
+        add(l1);
+        add(t1);
+        add(l2);
+        add(t2);
+        add(b);
+    }
+}
